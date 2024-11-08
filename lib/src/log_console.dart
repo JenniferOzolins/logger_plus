@@ -38,7 +38,7 @@ class LogConsole extends StatefulWidget {
   }
 
   @override
-  _LogConsoleState createState() => _LogConsoleState();
+  State<LogConsole> createState() => _LogConsoleState();
 }
 
 class RenderedEvent {
@@ -164,11 +164,11 @@ class _LogConsoleState extends State<LogConsole> {
             child: FloatingActionButton(
               mini: true,
               clipBehavior: Clip.antiAlias,
+              onPressed: _scrollToBottom,
               child: Icon(
                 Icons.arrow_downward,
                 color: widget.dark ? Colors.white : Colors.lightBlue[900],
               ),
-              onPressed: _scrollToBottom,
             ),
           ),
         ),
@@ -265,28 +265,28 @@ class _LogConsoleState extends State<LogConsole> {
             value: _filterLevel,
             items: const [
               DropdownMenuItem(
-                child: Text("VERBOSE"),
                 value: Level.verbose,
+                child: Text("VERBOSE"),
               ),
               DropdownMenuItem(
-                child: Text("DEBUG"),
                 value: Level.debug,
+                child: Text("DEBUG"),
               ),
               DropdownMenuItem(
-                child: Text("INFO"),
                 value: Level.info,
+                child: Text("INFO"),
               ),
               DropdownMenuItem(
-                child: Text("WARNING"),
                 value: Level.warning,
+                child: Text("WARNING"),
               ),
               DropdownMenuItem(
-                child: Text("ERROR"),
                 value: Level.error,
+                child: Text("ERROR"),
               ),
               DropdownMenuItem(
-                child: Text("WTF"),
                 value: Level.wtf,
+                child: Text("WTF"),
               )
             ],
             onChanged: (value) {

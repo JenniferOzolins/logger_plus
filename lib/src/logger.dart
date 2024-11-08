@@ -1,13 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:logger_plus/logger_plus.dart';
-import 'package:logger_plus/src/filters/development_filter.dart';
-import 'package:logger_plus/src/log_filter.dart';
-import 'package:logger_plus/src/log_output.dart';
-import 'package:logger_plus/src/log_printer.dart';
-import 'package:logger_plus/src/outputs/console_output.dart';
-import 'package:logger_plus/src/printers/pretty_printer.dart';
 
 /// [Level]s to control logging output. Logging can be enabled to include all
 /// levels above certain [Level].
@@ -132,8 +125,8 @@ class Logger {
         try {
           _output.output(outputEvent);
         } catch (e, s) {
-            print(e);
-            print(s);
+          print(e);
+          print(s);
         }
       }
     }
